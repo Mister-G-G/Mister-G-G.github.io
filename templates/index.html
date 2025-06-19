@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Datei-Upload</title>
+</head>
+<body>
+    <h1>Datei-Upload für Lernende</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="subject">Fach:</label>
+        <select name="subject" id="subject">
+            {% for subject in subjects %}
+            <option value="{{ subject }}">{{ subject }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="file">Datei wählen:</label>
+        <input type="file" name="file" id="file" required>
+        <br>
+        <button type="submit">Hochladen</button>
+    </form>
+</body>
+</html>
